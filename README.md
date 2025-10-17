@@ -210,10 +210,11 @@ dataset/
        'batch_size': 8,
        'epochs': 100,
        'output_dir': './output',
-       'val_folds': 5,
+       'val_folds': 10,
        'initial_learning_rate': 1e-3,
        'lambda_uncertainty': 0.1,
-       'physics_weight': 0.1,
+       'GradientClipping':  1.0
+       'physics_weight': 0.05,
        'focal_weight': 0.2,
        'boundary_weight': 0.3,
        'mixup_alpha': 0.2,
@@ -221,7 +222,7 @@ dataset/
        'nan_detection_patience': 3,
        'image_directory': './dataset/images',  # Update with your image path
        'mask_directory': './dataset/masks',    # Update with your mask path
-       'num_images': 163                       # Update based on your dataset
+       'num_images':                        # Update based on your dataset
    }
    ```
 
@@ -241,7 +242,7 @@ dataset/
 
 3. **Training Process**:
    - Loads images and masks from `image_directory` and `mask_directory`.
-   - Performs k-fold cross-validation (default: 5 folds).
+   - Performs k-fold cross-validation (default: 10 folds).
    - Trains the physics-aware U-Net model with custom losses.
    - Saves model weights, logs, and plots to a timestamped directory in `output/` (e.g., `output/training_YYYYMMDD_HHMMSS/`).
 
