@@ -21,9 +21,9 @@ def main():
         'batch_size': 8,
         'epochs': 100,
         'output_dir': './output',
-        'val_folds': 5,
+        'val_folds': 10,
         'initial_learning_rate': 1e-3,
-        'lambda_uncertainty': 0.1,
+        'lambda_uncertainty': 0.05,
         'physics_weight': 0.1,
         'focal_weight': 0.2,
         'boundary_weight': 0.3,
@@ -59,4 +59,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
